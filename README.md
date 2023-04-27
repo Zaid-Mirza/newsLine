@@ -8,10 +8,7 @@ News Line (Showing Articles)
 
 <div align="center">
   <sub>Developed by
-  <a href="https://twitter.com/zaidmirzait">Zaid Mirza</a> and
-  <a href="https://github.com/Zaid-Mirza/AttachmentManager/graphs/contributors">
-    contributors
-  </a>
+  <a href="https://twitter.com/zaidmirzait">Zaid Mirza</a>
 </div>
 <br/>
 
