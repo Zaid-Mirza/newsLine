@@ -18,4 +18,11 @@
     <string name="noArticleFound_msg">No Articles Found</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="duration_txt">Duration</string>
+    <string name="today_txt">Today</string>
+    <string name="sevenDays_txt">7 Days</string>
+    <string name="thirtyDays_txt">30 Days</string>
+    <string name="sections_txt">Sections</string>
+    <string name="apply_txt">Apply</string>
+    <string name="filter_txt">Filter</string>
 </resources>

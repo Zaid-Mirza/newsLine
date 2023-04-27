@@ -37,6 +37,7 @@ class ArticlesAdapter(
 
         fun onBind(article: Article?) {
             binding.apply {
+                sectionMaterialTextView.text = article?.section
                 articleLineMaterialTextView.text = article?.title
                 articleByMaterialTextView.text = article?.byline
                 publishedDateMaterialTextView.text = article?.publishedDate

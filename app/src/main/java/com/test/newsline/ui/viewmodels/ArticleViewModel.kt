@@ -4,6 +4,7 @@ import androidx.lifecycle.*
 import com.test.newsline.models.GeneralResponse
 import com.test.newsline.models.Resource
 import com.test.newsline.repositories.ArticleRepository
+import com.test.newsline.utils.AppEnums
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 
@@ -12,8 +13,10 @@ class ArticleViewModel(private val repository: ArticleRepository) : ViewModel() 
 
     fun getArticles(section: String, days: String): LiveData<Resource<GeneralResponse>?> {
 
+
         val handler = CoroutineExceptionHandler { data, exception ->
             val ss = ""
+            articlesLiveData.postValue(Resource.error("", null, AppEnums.ErrorType.Service))
 
         }
         viewModelScope.launch(handler) {

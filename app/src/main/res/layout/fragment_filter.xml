@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardElevation="@dimen/large_margin"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
+        style="@style/CustomCardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardElevation="@dimen/large_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="@android:color/transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/medium_margin">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/duration_materialTextView"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/duration_txt" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/duration_chipGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginVertical="@dimen/medium_margin"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                app:chipSpacingHorizontal="@dimen/small_margin"
+                app:chipSpacingVertical="@dimen/medium_margin"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/today_chip"
+                    style="@style/CustomChipChoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/today_txt"
+                    app:chipMinHeight="@dimen/chip_height" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/week_chip"
+                    style="@style/CustomChipChoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/sevenDays_txt"
+                    app:chipMinHeight="@dimen/chip_height" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/month_chip"
+                    style="@style/CustomChipChoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/thirtyDays_txt"
+                    app:chipMinHeight="@dimen/chip_height" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sections_materialTextView"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/sections_txt" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nsv_chips"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_weight="1">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/sections_chipGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/medium_margin"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
+                    app:chipSpacingHorizontal="@dimen/small_margin"
+                    app:chipSpacingVertical="@dimen/medium_margin"
+                    app:selectionRequired="true"
+                    app:singleSelection="true" />
+
+            </androidx.core.widget.NestedScrollView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/apply_materialButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:backgroundTint="@color/main_teal"
+                android:text="@string/apply_txt"
+                app:cornerRadius="@dimen/medium_margin" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
