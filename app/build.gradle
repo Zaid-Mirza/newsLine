@@ -1,0 +1,104 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs'
+}
+
+android {
+    namespace 'com.test.newsline'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.test.newsline"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "Integer", "ENVIRONMENT", "2"
+            buildConfigField "String", "BASE_URL", "\"https://api.rightfarm.tech/user/\""
+            buildConfigField "String", "API_KEY", "\"aj2kikBk3yPVyTurVu7kbK3b5D8Gw7q0\""
+
+        }
+        qa {
+            debuggable true
+            buildConfigField "Integer", "ENVIRONMENT", "1"
+            buildConfigField "String", "BASE_URL", "\"https://api.nytimes.com/svc/mostpopular/v2/mostviewed/\""
+            buildConfigField "String", "API_KEY", "\"aj2kikBk3yPVyTurVu7kbK3b5D8Gw7q0\""
+        }
+
+        debug {
+            debuggable true
+            buildConfigField "Integer", "ENVIRONMENT", "0"
+            buildConfigField "String", "BASE_URL", "\"https://api.nytimes.com/svc/mostpopular/v2/mostviewed/\""
+            buildConfigField "String", "API_KEY", "\"aj2kikBk3yPVyTurVu7kbK3b5D8Gw7q0\""
+
+        }
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.10.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    //Coroutines & Flow
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+
+
+    //Lifecycle extensions related to viewmodel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+
+    //For viewModels() implementation
+    implementation "androidx.fragment:fragment-ktx:1.5.7"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:2.5.3"
+    implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
+
+
+    // Gson
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.1'
+
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    testImplementation 'junit:junit:4.13.2'
+
+    debugImplementation "androidx.fragment:fragment-testing:1.5.7"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.3"
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+
+}

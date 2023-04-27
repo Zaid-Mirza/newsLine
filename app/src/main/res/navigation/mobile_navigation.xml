@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_articles">
+
+    <fragment
+        android:id="@+id/nav_articles"
+        android:name="com.test.newsline.ui.fragments.ArticleFragment"
+        android:label="@string/articles_txt"
+        tools:layout="@layout/fragment_article" >
+        <action
+            android:id="@+id/action_nav_articles_to_articleDetailFragment"
+            app:destination="@id/articleDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_news"
+        android:name="com.test.newsline.ui.fragments.NewsFragment"
+        android:label="@string/news_txt"
+        tools:layout="@layout/fragment_news" />
+
+    <fragment
+        android:id="@+id/nav_podcast"
+        android:name="com.test.newsline.ui.fragments.PodcastsFragment"
+        android:label="@string/podcasts_txt"
+        tools:layout="@layout/fragment_podcasts" />
+    <fragment
+        android:id="@+id/articleDetailFragment"
+        android:name="com.test.newsline.ui.fragments.ArticleDetailFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_article_detail" >
+        <argument
+            android:name="article"
+            app:argType="com.test.newsline.models.Article" />
+    </fragment>
+</navigation>
